@@ -1,0 +1,42 @@
+Create a new repository without going to github
+
+To create a new repository, you need to use GitHub API which requires Personal Acccess Token (PAT).
+Download it from "developer settings"
+
+My Token: <mytoken>
+
+Create a New Repository using cURL
+
+$ curl -u Chetansoni123:<mytoken> https://api.github.com/user/repos -d {"name": "MicroservicesProject2"}
+
+# The above command works but i didn't use eventually because of time constraints as it requires permissions a lot. Hence, create a repository manually.
+
+Initialize git local repository
+$ git init
+
+Set remote origin repository url
+$ git remote add origin <remote repository url> #note here, origin is a custom name. you can replace it with anything. e.g. origin to heroku
+
+To check remote origin name
+$ git remote -v
+
+> origin git@github.com:Chetansoni123/MicroservicesProject2.git (fetch)
+> origin git@github.com:Chetansoni123/MicroservicesProject2.git (push)
+
+Fetch all the remote branches into your local repositories
+$ git fetch origin
+
+List all the branches in your local repositories
+$ git branch -a
+
+Rename the existing master to main branch
+$ git branch -m master main
+
+Add contents:
+$ git add .
+
+check the status OR the contents you want to send to remote repository.
+$ git status
+
+Commit
+$ git commit -m "adding microservices 1 project"
